@@ -12,9 +12,9 @@ public class test {
                 
                 Calendar myTime = Calendar.getInstance();
                 if(stdTime.before(myTime)) {
-                    System.out.println("Á¦½Ã°£ µµÂø");
+                    System.out.println("ì…ì‹¤");
                 }else {
-                    System.out.println("Áö°¢");
+                    System.out.println("ì§€ê°");
                 }
                 
                 Calendar myWeek = Calendar.getInstance();
