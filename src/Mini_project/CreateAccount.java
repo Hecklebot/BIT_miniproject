@@ -5,31 +5,36 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 
 public class CreateAccount {
-
-    public static void main(String[] args) throws Exception{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("학생의 수는?");
-        int student = Integer.parseInt(br.readLine());
-        HashMap<String, String> account = new HashMap<>(); //hashmap의 value는 학생정보가 입력된 file or arraylist
-        
-        for(int i=0; i<student;i++) {
-            System.out.println("학번");
-            String accountNum = br.readLine();
-            System.out.println("이름");
-            String name = br.readLine();
-            account.put(accountNum, name);                      
-        }
-        
-
-        System.out.println("확인할 학번");
-        String check = br.readLine();
-        
-        System.out.println(check+ ": " + account.get(check));
-        
-        
-        
-        
-        
+    
+    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    	HashMap<String, String> account = new HashMap<>(); //hashmap 키값은 학번 date는 ArrayList 값
+    	boolean sw = false;
+    	do {
+    		System.out.println("1.입력 2. 확인 3. 종료");
+    		String choice = br.readLine();
+    		if(choice.equals("1")) {
+    			System.out.println("학생의 수는?");
+    			int student = Integer.parseInt(br.readLine());
+    			
+    			for(int i=0; i<student;i++) {
+    				System.out.println("학번");
+    				String accountNum = br.readLine();
+    				System.out.println("이름");
+    				String name = br.readLine();
+    				account.put(accountNum, name);      
+    			}sw=true;
+    		}else if(choice.equals("2")) {
+    			System.out.println("확인할 학번");
+    			String check = br.readLine();
+    			System.out.println(check+ ": " + account.get(check));
+    			sw=true;
+    		}else {
+    			System.out.println("종료");
+    			break;
+    		}
+    		
+    	}while(sw == true);
+    
     }
 
 }
